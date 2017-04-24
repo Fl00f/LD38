@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-
+	int HighestLevelCompleted = 1;
 	public Transform TeleportLocation;
 	Movement movement;
 	// Use this for initialization
@@ -28,5 +28,13 @@ public class Player : MonoBehaviour {
 
 	public void ToggleMovement(bool value){
 		movement.enabled = value;
+	}
+
+	public void AddToHighestLevelCompleted(int lvl){
+			HighestLevelCompleted++;
+		
+	}
+	public int GetCurrentLevel(){
+		return HighestLevelCompleted;
 	}
 }

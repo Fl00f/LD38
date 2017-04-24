@@ -28,7 +28,7 @@ public class SizeController : MonoBehaviour {
 		while (!isDoneReducingSize) {
 			yield return new WaitForEndOfFrame ();
 			transform.localScale *= sizeReductionStep;
-			col.radius = col.radius * sizeReductionStep;
+			//col.radius = col.radius * sizeReductionStep;
 
 			if (transform.localScale.x <= originalScale.x *FinalSizeReduction) {
 				isDoneReducingSize = true;
