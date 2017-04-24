@@ -19,4 +19,27 @@ public class FollowPlayer : MonoBehaviour {
 		playerPos.z = -10;
 		transform.position = playerPos;
 	}
+
+
+	float originalSize = 0;
+	public void ZoomIn(){
+		originalSize = Camera.main.orthographicSize;
+		StartCoroutine (StartZoom ());
+	}
+
+	IEnumerator StartZoom(){
+	
+		bool done = false;
+		while (!done) {
+			yield return new WaitForEndOfFrame ();
+			Camera.main.orthographicSize = Camera.main.orthographicSize * .99f;
+
+			if (Camera.main.orthographicSize <= originalSize * .7f) {
+				done = true;
+			}
+
+
+		}
+
+	}
 }

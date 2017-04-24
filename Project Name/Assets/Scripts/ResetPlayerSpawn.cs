@@ -25,7 +25,7 @@ public class ResetPlayerSpawn : MonoBehaviour {
 		if (!hasBeenTriggered) {
 			player.AddToHighestLevelCompleted (Level);
 			player.GetComponent<SizeController> ().ReduceSize ();
-			Camera.main.orthographicSize -= 2;
+			FindObjectOfType<FollowPlayer> ().ZoomIn ();
 			hasBeenTriggered = true;
 		}
 		yield return new WaitForSeconds (1);
